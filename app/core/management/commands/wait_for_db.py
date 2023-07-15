@@ -7,13 +7,12 @@ import time
 
 from psycopg2 import OperationalError as Psycopg2OpError
 from django.db.utils import OperationalError
-from typing import Any, Optional
 from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
     """ Django command to wait for database """
 
-    def handle(self, *args: Any, **options: Any):
+    def handle(self, *args, **options):
         """ Django command to wait for database """
         self.stdout.write('Waiting for databse...')
         db_up=False
